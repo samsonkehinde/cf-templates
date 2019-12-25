@@ -48,7 +48,7 @@
         "DBStack": {
             "Type": "AWS::CloudFormation::Stack",
             "Properties": {
-                "TemplateURL": "http: //s3.amazonaws.com/cloudpractice-development/drugstoc/drugstoc-db.json",
+                "TemplateURL": "https://raw.githubusercontent.com/samsonkehinde/cf-templates/master/drugstoc-db.json",
                 "TimeoutInMinutes": "60",
                 "Parameters": {
                     "DBAllocatedStorage": {
@@ -64,7 +64,7 @@
             "Type": "AWS::CloudFormation::Stack",
 			"DependsOn": "DBStack",
             "Properties": {
-                "TemplateURL": "http://s3.amazonaws.com/cloudpractice-development/drugstoc/ec2_with_codedeploy_agent_ubuntu.json",
+                "TemplateURL": "https://raw.githubusercontent.com/samsonkehinde/cf-templates/master/ec2_with_codedeploy_agent_ubuntu.json",
                 "TimeoutInMinutes": "60",
                 "Parameters": {
                     "KeyName": {
@@ -110,7 +110,7 @@
             "Type": "AWS::CloudFormation::Stack",
             "DependsOn": "EC2InstancesStack",
             "Properties": {
-                "TemplateURL": "http://s3.amazonaws.com/cloudpractice-cf-templates/drugstoc/drugstoc-codedeploy.json",
+                "TemplateURL": "https://raw.githubusercontent.com/samsonkehinde/cf-templates/master/drugstoc-codedeploy.json",
                 "TimeoutInMinutes": "60",
                 "Parameters": {
                     "TagValue": {
